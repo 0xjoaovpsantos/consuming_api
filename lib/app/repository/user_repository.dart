@@ -1,10 +1,10 @@
+import 'package:consuming_api/app/utils/constants.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:dio/dio.dart';
 
-class UserRepositoryRepository extends Disposable {
+class UserRepository extends Disposable {
   Future fetchPost(Dio client) async {
-    final response =
-        await client.get('https://jsonplaceholder.typicode.com/posts/1');
+    final response = await client.get(URL_API);
     return response.data;
   }
 
