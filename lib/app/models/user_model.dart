@@ -33,15 +33,4 @@ class UserModel {
       company: CompanyModel.fromJson(json['company']),
     );
   }
-  /*UserModel(var data) {
-    this.id = data["id"];
-    this.name = data["name"];
-    this.username = data["username"];
-    this.email = data["email"];
-    this.address = AddressModel(data["address"]);
-    this.phone = data["phone"];
-    this.website = data["website"];
-    this.company = CompanyModel(data["company"]);
-  }*/
-
 }

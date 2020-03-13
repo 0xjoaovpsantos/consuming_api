@@ -1,9 +1,4 @@
 class GeolocationModel {
-  /*GeolocationModel(var data) {
-    this.lat = data["lat"];
-    this.lng = data["lng"];
-  }*/
-
   String lat;
   String lng;
 

@@ -20,46 +20,49 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(title: Text("Example - Consuming API")),
       body: Observer(builder: (context) {
-        return SingleChildScrollView(
-          child: homeController.screenLoad
-              ? Center(
-                  child: CircularProgressIndicator(),
-                )
-              : Column(
-                  children: homeController.users.map((value) {
-                  return Container(
-                    width: MediaQuery.of(context).size.width,
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    UserDescriptionPage(value)));
-                      },
-                      child: Card(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0)),
-                          margin: EdgeInsets.all(10.0),
-                          child: Column(
-                            children: <Widget>[
-                              Container(
-                                margin: EdgeInsets.all(10),
-                                child: Text(value.name,
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold)),
-                              ),
-                              Text("User: " + value.username),
-                              Container(
-                                margin: EdgeInsets.all(10),
-                                child: Text("Email: " + value.email),
-                              )
-                            ],
-                          )),
-                    ),
-                  );
-                }).toList()),
+        return Center(
+          child: SingleChildScrollView(
+            child: homeController.screenLoad
+                ? Container(
+                    margin: EdgeInsets.all(10),
+                    child: CircularProgressIndicator(),
+                  )
+                : Column(
+                    children: homeController.users.map((value) {
+                    return Container(
+                      width: MediaQuery.of(context).size.width,
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      UserDescriptionPage(value)));
+                        },
+                        child: Card(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0)),
+                            margin: EdgeInsets.all(10.0),
+                            child: Column(
+                              children: <Widget>[
+                                Container(
+                                  margin: EdgeInsets.all(10),
+                                  child: Text(value.name,
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold)),
+                                ),
+                                Text("User: " + value.username),
+                                Container(
+                                  margin: EdgeInsets.all(10),
+                                  child: Text("Email: " + value.email),
+                                )
+                              ],
+                            )),
+                      ),
+                    );
+                  }).toList()),
+          ),
         );
       }),
     );

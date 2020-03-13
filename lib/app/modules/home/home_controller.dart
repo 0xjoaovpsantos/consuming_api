@@ -23,6 +23,5 @@ abstract class _HomeBase with Store {
   loadUsersList() async {
     users = await userRepository.searchUsers();
     screenLoad = false;
-    print(users.toString());
   }
 }

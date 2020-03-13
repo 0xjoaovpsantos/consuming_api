@@ -16,10 +16,6 @@ class UserRepository extends Disposable {
       for (var user in data) {
         users.add(UserModel.fromJson(user));
       }
-      /*data.forEach((userJson) {
-        UserModel user = UserModel(userJson);
-        users.add(user);
-      });*/
     } catch (ex) {}
 
     return users;

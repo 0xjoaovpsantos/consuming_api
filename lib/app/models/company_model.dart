@@ -1,10 +1,4 @@
 class CompanyModel {
-  /*CompanyModel(var data) {
-    this._name = data["name"];
-    this._catchPhrase = data["catchPhrase"];
-    this._bs = data["bs"];
-  }*/
-
   String name;
   String catchPhrase;
   String bs;
