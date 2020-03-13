@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+
+import 'home_controller.dart';
 
 class HomePage extends StatefulWidget {
   final String title;
@@ -9,6 +13,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final homeController = Modular.get<HomeController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,13 +29,39 @@ class _HomePageState extends State<HomePage> {
               child: Icon(Icons.search, color: Colors.white),
             )
           ]),
-      body: SingleChildScrollView(
-        child: ListView.builder(
-            shrinkWrap: true,
-            physics: BouncingScrollPhysics(),
-            itemCount: 2,
-            itemBuilder: UserCard),
-      ),
+      body: Observer(builder: (context) {
+        return SingleChildScrollView(
+          child: homeController.screenLoad
+              ? Center(
+                  child: CircularProgressIndicator(),
+                )
+              : Column(
+                  children: homeController.users.map((value) {
+                  return Container(
+                    width: MediaQuery.of(context).size.width,
+                    child: GestureDetector(
+                      child: Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0)),
+                          margin: EdgeInsets.all(10.0),
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                margin: EdgeInsets.all(10),
+                                child: Text(value.name,
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold)),
+                              ),
+                              Text("User: Breat"),
+                              Text("Email: Sincere@april.biz")
+                            ],
+                          )),
+                    ),
+                  );
+                }).toList()),
+        );
+      }),
     );
   }
 
@@ -44,7 +75,7 @@ class _HomePageState extends State<HomePage> {
             children: <Widget>[
               Container(
                 margin: EdgeInsets.all(10),
-                child: Text("Leanne Graham",
+                child: Text("teste",
                     style:
                         TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               ),
