@@ -1,3 +1,4 @@
+import 'package:consuming_api/app/modules/userdescription/user_description.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -17,18 +18,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          title: TextField(
-              decoration: InputDecoration(
-                  enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white)),
-                  focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white)))),
-          actions: <Widget>[
-            Container(
-              child: Icon(Icons.search, color: Colors.white),
-            )
-          ]),
+      appBar: AppBar(title: Text("Example - Consuming API")),
       body: Observer(builder: (context) {
         return SingleChildScrollView(
           child: homeController.screenLoad
@@ -40,6 +30,13 @@ class _HomePageState extends State<HomePage> {
                   return Container(
                     width: MediaQuery.of(context).size.width,
                     child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    UserDescriptionPage(value)));
+                      },
                       child: Card(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10.0)),
@@ -53,8 +50,11 @@ class _HomePageState extends State<HomePage> {
                                         fontSize: 20,
                                         fontWeight: FontWeight.bold)),
                               ),
-                              Text("User: Breat"),
-                              Text("Email: Sincere@april.biz")
+                              Text("User: " + value.username),
+                              Container(
+                                margin: EdgeInsets.all(10),
+                                child: Text("Email: " + value.email),
+                              )
                             ],
                           )),
                     ),

@@ -7,6 +7,7 @@ class AppWidget extends StatelessWidget {
     return MaterialApp(
       navigatorKey: Modular.navigatorKey,
       title: 'Consuming API',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         cursorColor: Colors.white,
         primarySwatch: Colors.blue,
