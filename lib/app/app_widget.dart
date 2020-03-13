@@ -8,6 +8,7 @@ class AppWidget extends StatelessWidget {
       navigatorKey: Modular.navigatorKey,
       title: 'Consuming API',
       theme: ThemeData(
+        cursorColor: Colors.white,
         primarySwatch: Colors.blue,
       ),
       initialRoute: '/',
