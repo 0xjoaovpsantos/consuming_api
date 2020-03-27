@@ -20,14 +20,14 @@ Link da API que foi usada no projeto: https://jsonplaceholder.typicode.com/users
 
 ## Flutter
 
-- [Flutter.dev](https://flutter.dev/)
+- <a href="https://flutter.dev/" target="_blank">Flutter.dev</a>
 
 ## Plugins used
 
-- [dio](https://pub.dev/packages/dio): ^3.0.9
-- [mobx](https://pub.dev/packages/mobx): ^0.4.0+1
-- [flutter_mobx](https://pub.dev/packages/flutter_mobx): ^0.3.6
-- [flutter_modular](https://pub.dev/packages/flutter_modular): 0.5.6
+- <a href="https://pub.dev/packages/dio" target="_blank">dio</a>: ^3.0.9
+- <a href="https://pub.dev/packages/mobx" target="_blank">mobx</a>: ^0.4.0+1
+- <a href="https://pub.dev/packages/flutter_mobx" target="_blank">flutter_mobx</a>: ^0.3.6
+- <a href="https://pub.dev/packages/flutter_modular" target="_blank">flutter_modular</a>: 0.5.6
 
 ## Additional
 
