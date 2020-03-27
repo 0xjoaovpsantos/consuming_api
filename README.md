@@ -6,6 +6,8 @@ Para padronização de commits, foi utilizado o conceito de [Conventional Commit
 
 O intuito era mostrar um exemplo de consumo de API com o Flutter.
 
+Link da API que foi usada no projeto: https://jsonplaceholder.typicode.com/users
+
 ## Screenshots
 
 <p align="center">
