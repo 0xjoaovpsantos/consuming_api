@@ -6,7 +6,10 @@ import 'package:consuming_api/app/modules/home/home_page.dart';
 class HomeModule extends ChildModule {
   @override
   List<Bind> get binds => [
+        //Controller
         Bind((i) => HomeController(i.get<UserRepository>())),
+        //Repository
+        Bind((i) => UserRepository())
       ];
 
   @override
